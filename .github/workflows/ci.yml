@@ -1,0 +1,19 @@
+name: First CI Pipeline
+
+on:
+  push:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run CI checks
+        run: bash ./ci.sh
+      - name: Say hello
+        run: echo "Hello from GitHub Actions"
+      - name: Show directory
+        run: pwd
+      - name: Check Git
+        run: git version
