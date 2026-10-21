@@ -16,7 +16,7 @@ jobs:
       - name: Run CI checks
         run: bash ./ci.sh
       - name: Build Docker Image
-        run: docker build -t ci-app:v1 .
+        run: docker build -t ci-app:${GITHUB_SHA::7} .
       - name: Say hello
         run: echo "Hello from GitHub Actions"
       - name: Show directory
