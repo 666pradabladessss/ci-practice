@@ -6,3 +6,4 @@ bash -n deploy.sh
 echo "All checks passed"
 if [ -f backup.sh ]; then
 echo "Backup script exists"
+fi
