@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Check Bash syntax
+        run: bash -n ci.sh
       - name: Run CI checks
         run: bash ./ci.sh
       - name: Say hello
