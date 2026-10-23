@@ -11,3 +11,8 @@ jobs:
           whoami
           hostname
           pwd
+      - name: Check Docker environment
+        run: |
+          docker version
+          docker compose version
+          docker compose -f /opt/ci-app/compose.yaml config --quiet
