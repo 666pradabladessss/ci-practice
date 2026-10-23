@@ -1,0 +1,13 @@
+name: Deploy Test
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: [self-hosted, deploy]
+    steps:
+      - name: Check runner
+        run: |
+          echo "Hello from self-hosted runner!"
+          whoami
+          hostname
+          pwd
