@@ -58,3 +58,7 @@ jobs:
           IMAGE_TAG="${IMAGE_TAG:0:7}"
           echo "Deploying image tag: $IMAGE_TAG"
           IMAGE_TAG="$IMAGE_TAG" docker compose -f /opt/ci-app/compose.yaml config --quiet
+          IMAGE_TAG="$IMAGE_TAG" docker compose -f /opt/ci-app/compose.yaml up -d --pull always
+          docker inspect ci-app --format '{{.Config.Image}}'
+          docker inspect ci-app --format '{{.State.ExitCode}}'
+          docker logs ci-app
